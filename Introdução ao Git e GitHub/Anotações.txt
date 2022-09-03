@@ -1,0 +1,77 @@
+-> Introdução ao Git
+	- Sistema de versionamento de código distribuído
+	- Criado por Linus Torvalds
+
+-> Benefícios do Git e GitHub
+	- Controle de versão
+	- Armazenamento em nuvem
+	- Trabalho em equipe
+	- Aperfeiçoamento de código
+	- Reconhecimento
+
+-> Comandos básicos para um bom desempenho no terminal
+	- dir = listar diretórios
+	- cd = navegar entre os diretórios
+	- cls = limpar terminal
+	- tecla(TAB) = autocompletar
+	- mkdir = criar pastas 
+	- echo = printar
+	- del = deletar arquivos
+	- rmdir = remover pastas
+
+-> Tópicos fundamentais para entender o funcionamento do Git
+	- SHA1:
+		> Algoritmo de Hash Seguro
+		> É um conjunto de funções hash criptográficas projetadas pela NSA
+		> A encriptação gera conjunto de caracteres identificador de 40 dígitos
+		> É uma forma curta de representar um arquivo
+		> No git bash -> open sha1 texto.txt => gera um sha1
+
+-> Objetos fundamentais 
+	- Blob
+		> (blob, tamanho da string/arquivo, \0, conteúdo)
+	- Tree
+		> (tree, tamanho, \0, blob, sha1 do blob, conteúdo)
+	- Commit
+		> (commit, tamanho, tree, sha1 da tree, parente, sha1 do parente, autor, Misael, mensagem, "Lindo demais", timestamp)
+
+-> Chave SSH
+	- Para gerar deve executar no GitBash
+	- ssh-keygen -t ed25519 -C "eusoulindo@gmail.com"
+	- Adicionar a chave gerada no GitHub
+	- eval $(ssh-agent -s)
+	- ssh add (caminho onde a chave privada está) 
+
+-> Criando um repositório
+	- git init = cria uma pasta oculta .git
+	- Adicionar autor:
+		> git config --global user.name "MisaelFalcao"
+		> git config --global user.email "eusoulindo@gmail.com"
+
+-> Adicionando um arquivo
+	- Markdown
+		> Criar um arquivo de texto com extensão .md
+	- git add *
+	- git commit -m "commit inicial"
+
+-> Untracked e Tracked
+	- Untracked = arquivos que não temos ciência
+	- Tracked = Arquivos que temos ciência
+		> Arquivo não modificado = Unmodified
+		> Arquivo que sofreu modificação = Modified
+		> Arquivo em preparação (para comitar) = Staged
+	- git status
+		> Comando que mostra os status dos arquivos e nos diz se são untracked, tracked, modified,etc.
+	- git commit -m
+		> Adiciona um comentário ao commit
+
+-> Empurrar código do re local para o remoto
+	- Adicionar origem
+		> git remote add origin (link do repositório no github)
+	- Levar o código da máquina para o GitHub
+		> git push origin master
+	- Puxar versão mais recente no GitHub para a sua máquina
+		> git pull origin master
+
+-> Como clonar um código do GitHub
+	- git clone (link do repositório no github)
